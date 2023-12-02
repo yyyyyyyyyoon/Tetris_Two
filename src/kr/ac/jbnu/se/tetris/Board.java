@@ -170,14 +170,7 @@ public class Board extends JPanel implements ActionListener {
 		g.fillRect(0, 0, getWidth(), getHeight());
 		g.setColor(Color.LIGHT_GRAY);
 
-		// 가로선
-		for (int i = 0; i <= BoardHeight; i++) {
-			g.drawLine(0, i * squareHeight(), BoardWidth * squareWidth(), i * squareHeight());
-		}
-		// 세로선
-		for (int i = 0; i < BoardWidth; i++) {
-			g.drawLine(i * squareWidth(), 0, i * squareWidth(), (BoardHeight + 1) * squareHeight());
-		}
+		drawGridLines(g);
 
 		// 게임 오버 시 현재 쌓여있는 블록을 회색으로 변경
 		if (isGameOver) {
@@ -204,6 +197,19 @@ public class Board extends JPanel implements ActionListener {
 			}
 		}
 	}
+
+	private void drawGridLines(Graphics g) {
+		for (int i = 0; i <= BoardHeight; i++) {
+			int y = i * squareHeight();
+			g.drawLine(0, y, BoardWidth * squareWidth(), y);
+		}
+
+		for (int i = 0; i < BoardWidth; i++) {
+			int x = i * squareWidth();
+			g.drawLine(x, 0, x, (BoardHeight + 1) * squareHeight());
+		}
+	}
+
 
 	public void paint(Graphics g) {
 		super.paint(g);
