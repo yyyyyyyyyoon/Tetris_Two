@@ -23,6 +23,7 @@ public class MainFrame extends JFrame {
     private JPasswordField passwordField; // 비밀번호 입력 필드
     private CardLayout cardLayout;
     private JPanel cardPanel;
+    private static final String SETTINGS_PANEL = "settings";
 
     public MainFrame() {
         setTitle("Tetris");
@@ -108,7 +109,7 @@ public class MainFrame extends JFrame {
         settingsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cardLayout.show(cardPanel, "settings");
+                cardLayout.show(cardPanel, SETTINGS_PANEL);
             }
         });
         startPanel.add(settingsButton);
@@ -132,7 +133,7 @@ public class MainFrame extends JFrame {
         });
         settingsPanel.add(saveButton);
 
-        cardPanel.add(settingsPanel, "settings");
+        cardPanel.add(settingsPanel, SETTINGS_PANEL);
 
         // 슬라이더 변경 이벤트 리스너
         volumeSlider.addChangeListener(new ChangeListener() {
@@ -150,7 +151,7 @@ public class MainFrame extends JFrame {
         settingsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cardLayout.show(cardPanel, "settings");
+                cardLayout.show(cardPanel, SETTINGS_PANEL);
             }
         });
 
