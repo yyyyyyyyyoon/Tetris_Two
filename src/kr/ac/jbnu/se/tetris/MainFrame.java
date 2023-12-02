@@ -26,7 +26,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         setTitle("Tetris");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(800, 600);
         setLocationRelativeTo(null);
 
