@@ -1,51 +1,49 @@
 
-_
-java:S1192o"IDefine a constant instead of duplicating this literal "settings" 3 times.(¤Ÿ€„
 b
-java:S1192‚"FDefine a constant instead of duplicating this literal "start" 3 times.(ú©Çüÿÿÿÿ
-g	java:S117È"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ»ƒˆ
-l	java:S117É"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßÀ»”ùÿÿÿÿ
-g	java:S117Ú"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ»ƒˆ
-l	java:S117Û"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßÀ»”ùÿÿÿÿ
+java:S1192ƒ"FDefine a constant instead of duplicating this literal "start" 3 times.(ú©Çüÿÿÿÿ
+g	java:S117É"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ»ƒˆ
+l	java:S117Ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßÀ»”ùÿÿÿÿ
+g	java:S117Û"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ»ƒˆ
+l	java:S117Ü"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßÀ»”ùÿÿÿÿ
 =
-java:S16043"(Make this anonymous inner class a lambda(Ï¹§
+java:S16044"(Make this anonymous inner class a lambda(Ï¹§
 >
-java:S1604H"(Make this anonymous inner class a lambda(ÖãºÂ
+java:S1604I"(Make this anonymous inner class a lambda(ÖãºÂ
 >
-java:S1604l"(Make this anonymous inner class a lambda(ê»ê¨
->
-java:S1604"(Make this anonymous inner class a lambda(Ï¸
+java:S1604m"(Make this anonymous inner class a lambda(ê»ê¨
 ?
-java:S1604Š"(Make this anonymous inner class a lambda(¦ªĞ«
+java:S1604€"(Make this anonymous inner class a lambda(Ï¸
 ?
-java:S1604–"(Make this anonymous inner class a lambda(ê»ê¨
+java:S1604‹"(Make this anonymous inner class a lambda(¦ªĞ«
+?
+java:S1604—"(Make this anonymous inner class a lambda(ê»ê¨
 D
-java:S1604¢"(Make this anonymous inner class a lambda(³ ı‹ıÿÿÿÿ
+java:S1604£"(Make this anonymous inner class a lambda(³ ı‹ıÿÿÿÿ
 D
-java:S1604½"(Make this anonymous inner class a lambda(Ô¶µÿşÿÿÿÿ
-c
-java:S2095Ï"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ
+java:S1604¾"(Make this anonymous inner class a lambda(Ô¶µÿşÿÿÿÿ
 d
-java:S2095Í"HUse try-with-resources or close this "Connection" in a "finally" clause.(ÁĞ÷»ıÿÿÿÿ
+java:S2095Î"HUse try-with-resources or close this "Connection" in a "finally" clause.(ÁĞ÷»ıÿÿÿÿ
+c
+java:S2095Ğ"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ
 R
-java:S1854M"<Remove this useless assignment to local variable "password".(’Ğ¬©
+java:S1854N"<Remove this useless assignment to local variable "password".(’Ğ¬©
 W
-java:S1854L"<Remove this useless assignment to local variable "username".(†¾êûøÿÿÿÿ
+java:S1854M"<Remove this useless assignment to local variable "username".(†¾êûøÿÿÿÿ
 H
-java:S1481L"-Remove this unused "username" local variable.(†¾êûøÿÿÿÿ
+java:S1481M"-Remove this unused "username" local variable.(†¾êûøÿÿÿÿ
 C
-java:S1481M"-Remove this unused "password" local variable.(’Ğ¬©
-V	java:S125P"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ
-Q	java:S125T"<This block of commented-out lines of code should be removed.(¡Õ±š
+java:S1481N"-Remove this unused "password" local variable.(’Ğ¬©
+V	java:S125Q"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ
+Q	java:S125U"<This block of commented-out lines of code should be removed.(¡Õ±š
 `
-java:S3252u"EUse static access with "javax.swing.SwingConstants" for "HORIZONTAL".(àïÔíûÿÿÿÿ
+java:S3252v"EUse static access with "javax.swing.SwingConstants" for "HORIZONTAL".(àïÔíûÿÿÿÿ
 ?
-java:S1905"(Remove this unnecessary cast to "float".(ëëÀ«
-i	java:S100Æ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(› ê‹ıÿÿÿÿ
+java:S1905‘"(Remove this unnecessary cast to "float".(ëëÀ«
+i	java:S100Ç"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(› ê‹ıÿÿÿÿ
 R
-java:S6437Í"6Revoke and change this password, as it is compromised.(ÁĞ÷»ıÿÿÿÿ
+java:S6437Î"6Revoke and change this password, as it is compromised.(ÁĞ÷»ıÿÿÿÿ
 R
-java:S6437ß"6Revoke and change this password, as it is compromised.(ÁĞ÷»ıÿÿÿÿ
-I
+java:S6437à"6Revoke and change this password, as it is compromised.(ÁĞ÷»ıÿÿÿÿ
+P
 java:S1128
-".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ
+".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8¾ì÷İÂ1
