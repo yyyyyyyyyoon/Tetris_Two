@@ -1,12 +1,16 @@
 package kr.ac.jbnu.se.tetris;
 
 import javax.swing.JPanel;
-import javax.swing.JLabel;
 import java.awt.Graphics; // Graphics를 import 추가
 import java.awt.Color;   // Color를 import 추가
 
 public class SidePanel extends JPanel {
-    JLabel scoreLabel;
+    private static final int SQUARE_WIDTH = 20;
+    private static final int SQUARE_HEIGHT = 20;
+    private static final int TEXT_X = 10;
+    private static final int TEXT_Y = 180;
+    private static final int INITIAL_X = 30;
+    private static final int INITIAL_Y = 220;
     int score = 0;
 
     // 점수를 업데이트하는 메서드
@@ -42,22 +46,20 @@ public class SidePanel extends JPanel {
 
         // 다음 블록 표시
         g.setColor(Color.BLACK);
-        g.drawString("Next Shape:", 10, 180);
+        g.drawString("Next Shape:", TEXT_X, TEXT_Y);
 
         if (nextShape != null) {
-            int squareWidth = 20;
-            int squareHeight = 20;
             int[][] coords = Tetrominoes.getCoordinates(nextShape);
 
             // 다음 블록을 그리기
             for (int i = 0; i < coords.length; i++) {
-                int x = coords[i][0] * squareWidth + 30;
-                int y = coords[i][1] * squareHeight + 220;
+                int x = coords[i][0] * SQUARE_WIDTH + INITIAL_X;
+                int y = coords[i][1] * SQUARE_HEIGHT + INITIAL_Y;
 
                 g.setColor(Board.colors[nextShape.ordinal()]);
-                g.fillRect(x, y, squareWidth, squareHeight);
+                g.fillRect(x, y, SQUARE_WIDTH, SQUARE_HEIGHT);
                 g.setColor(Color.BLACK);
-                g.drawRect(x, y, squareWidth, squareHeight);
+                g.drawRect(x, y, SQUARE_WIDTH, SQUARE_HEIGHT);
             }
         }
     }
