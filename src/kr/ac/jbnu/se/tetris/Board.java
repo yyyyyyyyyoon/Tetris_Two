@@ -58,6 +58,7 @@ public class Board extends JPanel implements ActionListener {
 			newPiece(); // 새로운 블록 생성
 		}
 	}
+	// 나는 김성광
 
 	public void retrieveSavedShape() {
 		if (savedShape != Tetrominoes.NoShape) {
