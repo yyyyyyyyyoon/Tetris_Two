@@ -58,7 +58,7 @@ public class Board extends JPanel implements ActionListener {
 			newPiece(); // 새로운 블록 생성
 		}
 	}
-//나는 최윤서
+
 	public void retrieveSavedShape() {
 		if (savedShape != Tetrominoes.NoShape) {
 			// 현재 블록의 좌표를 설정하고 저장된 블록을 가져옴
