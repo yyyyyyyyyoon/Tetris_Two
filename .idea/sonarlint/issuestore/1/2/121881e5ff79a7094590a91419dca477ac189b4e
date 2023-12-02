@@ -23,10 +23,10 @@ D
 java:S1604¢"(Make this anonymous inner class a lambda(³ ý‹ýÿÿÿÿ
 D
 java:S1604½"(Make this anonymous inner class a lambda(Ô¶µÿþÿÿÿÿ
-c
-java:S2095Ï"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµþÿÿÿÿ
 d
 java:S2095Í"HUse try-with-resources or close this "Connection" in a "finally" clause.(ÁÐ÷»ýÿÿÿÿ
+c
+java:S2095Ï"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµþÿÿÿÿ
 d
 java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öþÿÿÿÿ
 R

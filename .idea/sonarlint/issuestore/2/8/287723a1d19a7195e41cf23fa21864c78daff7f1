@@ -54,16 +54,16 @@ java:S1161—":Add the "@Override" annotation above this method signature(İ¼õA8÷
 ?	java:S131Ñ""Add a default case to this switch.(ÖÅ«Á8÷ÀãËÂ1
 Q
 java:S1656S"/Remove or correct this useless self-assignment.(éñßøÿÿÿÿ8÷ÀãËÂ1
-?
-java:S3398¾"!Move this method into "TAdapter".(Ş«Éª8÷ÀãËÂ1
 D
-java:S3398¡"!Move this method into "TAdapter".(ˆªÉèıÿÿÿÿ8÷ÀãËÂ1
+java:S3398‘"!Move this method into "TAdapter".(¦ñ“üÿÿÿÿ8÷ÀãËÂ1
 D
 java:S3398©"!Move this method into "TAdapter".(“¹ü÷ûÿÿÿÿ8÷ÀãËÂ1
 ?
 java:S3398ƒ"!Move this method into "TAdapter".(•ŞÍê8÷ÀãËÂ1
+?
+java:S3398¾"!Move this method into "TAdapter".(Ş«Éª8÷ÀãËÂ1
 D
-java:S3398‘"!Move this method into "TAdapter".(¦ñ“üÿÿÿÿ8÷ÀãËÂ1
+java:S3398¡"!Move this method into "TAdapter".(ˆªÉèıÿÿÿÿ8÷ÀãËÂ1
 W
 java:S1068"5Remove this unused "removeBottomLines" private field.(é‹óëúÿÿÿÿ8÷ÀãËÂ1
 T

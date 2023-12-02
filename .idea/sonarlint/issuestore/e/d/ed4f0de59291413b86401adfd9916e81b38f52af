@@ -1,8 +1,0 @@
-
-O
-java:S1117"9Rename "board" which hides the field declared at line 10.(¬¢ÐÎ
-W
-java:S1117"<Rename "sidePanel" which hides the field declared at line 9.(ùì±ôûÿÿÿÿ
-D
-java:S1068
-")Remove this unused "board" private field.(åÌ–®þÿÿÿÿ

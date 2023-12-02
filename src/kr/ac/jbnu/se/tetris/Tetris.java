@@ -7,19 +7,18 @@ import javax.swing.JSplitPane;
 
 public class Tetris extends JFrame {
 	SidePanel sidePanel;  // 새로운 SidePanel 객체 추가
-	private Board board;
-	JLabel statusbar;
 
+	JLabel statusbar;
+	Board board;
 	public Tetris() {
+
 		board = new Board(this);
 		statusbar = new JLabel(" 0");
 		add(statusbar, BorderLayout.SOUTH);
 
 		sidePanel = new SidePanel();  // SidePanel 객체 초기화
 
-		Board board = new Board(this);
-
-		SidePanel sidePanel = board.getSidePanel(); // SidePanel 객체에 접근
+		sidePanel = board.getSidePanel(); // SidePanel 객체에 접근
 		// Board 객체를 생성한 후에 splitPane를 설정
 		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, sidePanel, board);
 		splitPane.setResizeWeight(0.3);  // 사이드 패널과 중앙 보드 크기 비율 조절

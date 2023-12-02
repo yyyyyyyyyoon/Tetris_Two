@@ -165,7 +165,7 @@ public class Board extends JPanel implements ActionListener {
 		Dimension size = getSize();
 		int boardTop = (int) size.getHeight() - BoardHeight * squareHeight();
 
-		// 게임 창 배경 색, 격자 무늬
+		// 게임 창 배경 색, 격자무늬
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, getWidth(), getHeight());
 		g.setColor(Color.LIGHT_GRAY);
