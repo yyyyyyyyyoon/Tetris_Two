@@ -213,84 +213,95 @@ public class Board extends JPanel implements ActionListener {
 
 	public void paint(Graphics g) {
 		super.paint(g);
+		drawBoard(g);
+		drawCurrentPiece(g);
+		drawLandingPreview(g);
+		updateElapsedTime();
+	}
+
+	// 보드를 그림
+	private void drawBoard(Graphics g) {
 		Dimension size = getSize();
 		int boardTop = (int) size.getHeight() - BoardHeight * squareHeight();
 
 		for (int i = 0; i < BoardHeight; ++i) {
 			for (int j = 0; j < BoardWidth; ++j) {
-				if (j >= 0 && j < BoardWidth && (BoardHeight - i - 1) >= 0 && (BoardHeight - i - 1) < BoardHeight) {
-					Tetrominoes shape = shapeAt(j, BoardHeight - i - 1);
-					if (shape != Tetrominoes.NoShape) {
-						drawSquare(g, 0 + j * squareWidth(), boardTop + i * squareHeight(), shape);
-					}
-				}
-			}
-		}
-
-
-		if (isStarted && curPiece.getShape() != Tetrominoes.NoShape) {
-			// 현재 Tetris 조각을 그림
-			for (int i = 0; i < 4; ++i) {
-				int x = curX + curPiece.x(i);
-				int y = curY - curPiece.y(i);
-				drawSquare(g, 0 + x * squareWidth(), boardTop + (BoardHeight - y - 1) * squareHeight(), curPiece.getShape());
-			}
-
-			// 현재 Tetris 조각의 위치를 저장
-			Shape savedPiece = curPiece;
-			int savedX = curX;
-			int savedY = curY;
-
-			// 착지 위치를 계산
-			int landingY = curY;
-			while (tryMove(curPiece, curX, landingY - 1)) {
-				landingY--;
-			}
-
-			// 착지 위치를 미리보기로 그림
-			for (int i = 0; i < 4; ++i) {
-				int x = curX + curPiece.x(i);
-				int y = landingY - curPiece.y(i);
-				if (y >= 0 && shapeAt(x, y) == Tetrominoes.NoShape) {
-					Color currentBlockColor = colors[curPiece.getShape().ordinal()];
-					int transparency = 110;  // 투명도를 0에서 255까지의 값으로 조절
-					Color transparentColor = new Color(
-							currentBlockColor.getRed(),
-							currentBlockColor.getGreen(),
-							currentBlockColor.getBlue(),
-							transparency
-					);
-					g.setColor(transparentColor);
-					g.fillRect(0 + x * squareWidth(), boardTop + (BoardHeight - y - 1) * squareHeight(), squareWidth(), squareHeight());
-				}
-			}
-
-
-
-			// 현재 Tetris 조각의 위치를 복원
-			curPiece = savedPiece;
-			curX = savedX;
-			curY = savedY;
-
-
-			// 게임 화면을 그림
-			for (int i = 0; i < BoardHeight; ++i) {
-				for (int j = 0; j < BoardWidth; ++j) {
-					Tetrominoes shape = shapeAt(j, BoardHeight - i - 1);
-					if (shape != Tetrominoes.NoShape)
-						drawSquare(g, 0 + j * squareWidth(), boardTop + i * squareHeight(), shape);
-				}
-			}
-
-
-			// 경과 시간 업데이트 및 표시
-			if (isStarted && !isGameOver) {
-				long currentTime = System.currentTimeMillis();
-				long elapsedTime = (currentTime - startTime) / 1000; // 경과 시간(초) 계산
-				timeLabel.setText("Time: " + elapsedTime + "s");
+				Tetrominoes shape = shapeAt(j, BoardHeight - i - 1);
+				if (shape != Tetrominoes.NoShape)
+					drawSquare(g, 0 + j * squareWidth(), boardTop + i * squareHeight(), shape);
 			}
 		}
 	}
+
+	// CurrentPiece그리기
+	private void drawCurrentPiece(Graphics g) {
+		if (isStarted && curPiece.getShape() != Tetrominoes.NoShape) {
+			for (int i = 0; i < 4; ++i) {
+				int x = curX + curPiece.x(i);
+				int y = curY - curPiece.y(i);
+				drawSquare(g, 0 + x * squareWidth(), boardTop() + (BoardHeight - y - 1) * squareHeight(), curPiece.getShape());
+			}
+		}
+	}
+
+	// 착지된 블럭 그리기
+	private void drawLandingPreview(Graphics g) {
+		Shape savedPiece = curPiece;
+		int savedX = curX;
+		int savedY = curY;
+
+		int landingY = calculateLandingY();
+		for (int i = 0; i < 4; ++i) {
+			int x = curX + curPiece.x(i);
+			int y = landingY - curPiece.y(i);
+			drawTransparentSquare(g, x, y);
+		}
+
+		// Restore the current Tetris piece's position
+		curPiece = savedPiece;
+		curX = savedX;
+		curY = savedY;
+	}
+
+	// Update and display elapsed time
+	private void updateElapsedTime() {
+		if (isStarted && !isGameOver) {
+			long currentTime = System.currentTimeMillis();
+			long elapsedTime = (currentTime - startTime) / 1000;
+			timeLabel.setText("Time: " + elapsedTime + "s");
+		}
+	}
+
+	// Calculate the landing position of the current Tetris piece
+	private int calculateLandingY() {
+		int landingY = curY;
+		while (tryMove(curPiece, curX, landingY - 1)) {
+			landingY--;
+		}
+		return landingY;
+	}
+
+	// Draw a transparent square
+	private void drawTransparentSquare(Graphics g, int x, int y) {
+		if (y >= 0 && shapeAt(x, y) == Tetrominoes.NoShape) {
+			Color currentBlockColor = colors[curPiece.getShape().ordinal()];
+			int transparency = 110;
+			Color transparentColor = new Color(
+					currentBlockColor.getRed(),
+					currentBlockColor.getGreen(),
+					currentBlockColor.getBlue(),
+					transparency
+			);
+			g.setColor(transparentColor);
+			g.fillRect(0 + x * squareWidth(), boardTop() + (BoardHeight - y - 1) * squareHeight(), squareWidth(), squareHeight());
+		}
+	}
+
+	private int boardTop(){
+		Dimension size = getSize();
+		return (int) size.getHeight() - BoardHeight * squareHeight();
+	}
+
 
 
 
