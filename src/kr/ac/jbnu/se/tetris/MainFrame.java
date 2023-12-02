@@ -34,7 +34,7 @@ public class MainFrame extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                ImageIcon backgroundImage = new ImageIcon("C:\\Users\\USER\\Desktop\\수업 자료\\2-2\\소스코드분석\\배경이미지.png");
+                ImageIcon backgroundImage = new ImageIcon("source/배경이미지.png");
                 g.drawImage(backgroundImage.getImage(), 0, 0, getWidth(), getHeight(), null);
             }
         };
@@ -185,7 +185,7 @@ public class MainFrame extends JFrame {
 
 
     public static void main(String[] args){
-        Music.playBackgroundMusic("C:\\Users\\USER\\Downloads\\BGM-Tetris-Kalinka_1.wav");
+        Music.playBackgroundMusic("source/BGM-Tetris-Kalinka_1.wav");
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {

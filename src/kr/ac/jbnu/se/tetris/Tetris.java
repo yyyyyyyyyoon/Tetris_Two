@@ -38,7 +38,7 @@ public class Tetris extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		Music.playBackgroundMusic("C:\\Users\\USER\\Downloads\\BGM-Tetris-Kalinka_1.wav");
+		Music.playBackgroundMusic("source/BGM-Tetris-Kalinka_1.wav");
 		Tetris game = new Tetris();
 		game.setLocationRelativeTo(null);
 		game.setVisible(true);
