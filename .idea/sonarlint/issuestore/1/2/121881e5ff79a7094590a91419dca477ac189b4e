@@ -21,10 +21,10 @@ D
 java:S1604£"(Make this anonymous inner class a lambda(³ ý‹ýÿÿÿÿ
 D
 java:S1604¾"(Make this anonymous inner class a lambda(Ô¶µÿþÿÿÿÿ
-d
-java:S2095Î"HUse try-with-resources or close this "Connection" in a "finally" clause.(ÁÐ÷»ýÿÿÿÿ
 c
 java:S2095Ð"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµþÿÿÿÿ
+d
+java:S2095Î"HUse try-with-resources or close this "Connection" in a "finally" clause.(ÁÐ÷»ýÿÿÿÿ
 R
 java:S1854N"<Remove this useless assignment to local variable "password".(’Ð¬©
 W

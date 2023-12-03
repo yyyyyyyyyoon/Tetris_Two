@@ -70,9 +70,9 @@ public class Board extends JPanel implements ActionListener {
 		}
 	}
 
-	public static Color colors[] = { new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
+	public static Color colors[] = {new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
 			new Color(102, 102, 204), new Color(204, 204, 102), new Color(204, 102, 204), new Color(102, 204, 204),
-			new Color(218, 170, 0) };
+			new Color(218, 170, 0)};
 
 	public Board(Tetris parent) {
 		setFocusable(true);
@@ -156,7 +156,6 @@ public class Board extends JPanel implements ActionListener {
 		}
 		repaint();
 	}
-
 
 
 	@Override
@@ -297,12 +296,10 @@ public class Board extends JPanel implements ActionListener {
 		}
 	}
 
-	private int boardTop(){
+	private int boardTop() {
 		Dimension size = getSize();
 		return (int) size.getHeight() - BoardHeight * squareHeight();
 	}
-
-
 
 
 	private void dropDown() {
@@ -340,7 +337,6 @@ public class Board extends JPanel implements ActionListener {
 		if (!isFallingFinished)
 			newPiece();
 	}
-
 
 
 	private boolean tryMove(Shape newPiece, int newX, int newY) {
@@ -490,14 +486,14 @@ public class Board extends JPanel implements ActionListener {
 		curPiece = nextPiece;
 		nextPiece = new Shape();
 		nextPiece.setRandomShape();
-		sidePanel.setNextShape(nextPiece.getShape());}
-
+		sidePanel.setNextShape(nextPiece.getShape());
+	}
 
 
 	private void drawSquare(Graphics g, int x, int y, Tetrominoes shape) {
 		Color colors[] = {new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
 				new Color(102, 102, 204), new Color(204, 204, 102), new Color(204, 102, 204), new Color(102, 204, 204),
-				new Color(218, 170, 0),new Color(50, 50, 50), Color.GRAY };
+				new Color(218, 170, 0), new Color(50, 50, 50), Color.GRAY};
 
 		if (isGameOver) {
 			g.setColor(Color.GRAY);  // 게임 오버 시 블록을 회색으로 변경
@@ -518,12 +514,7 @@ public class Board extends JPanel implements ActionListener {
 	}
 
 
-
-
-
-
-
-	private void restartGame () {
+	private void restartGame() {
 		isGameOver = false;
 		clearBoard();
 		numLinesRemoved = 0;
@@ -546,6 +537,15 @@ public class Board extends JPanel implements ActionListener {
 		public void keyPressed(KeyEvent e) {
 			int keycode = e.getKeyCode();
 
+			// 특수 키 처리
+			handleSpecialKeys(keycode);
+			// 일반 게임 키 처리
+			handleGameKeys(keycode);
+			// 사용자 정의 키 처리
+			handleCustomKeys(keycode);
+		}
+
+		private void handleCustomKeys(int keycode) {
 			// 이전에 저장한 블록을 꺼내오기
 			if (keycode == 'c' || keycode == 'C') {
 				saveShape();
@@ -554,56 +554,50 @@ public class Board extends JPanel implements ActionListener {
 			else if (keycode == 'e' || keycode == 'E') {
 				retrieveSavedShape();
 			}
-
+			// 아이템 사용 처리
 			if (keycode == 'w' || keycode == 'W') {
-				// 아이템 사용 횟수가 0보다 크면 실행
-				if (removeAllLinesUsage > 0) {
-					removeAllLines(); // 전체 블록 삭제 아이템
-					// 아이템 사용 후 사용 횟수 감소
-					removeAllLinesUsage--;
+				handleRemoveAllLinesItem();
+			} else if (keycode == 'q' || keycode == 'Q') {
+				handleRemoveBottomLinesItem();
+			} else if (keycode == 's' || keycode == 'S') {
+				handleScoreIncreasedItem();
+			}
+		}
+
+		private void handleRemoveAllLinesItem() {
+			// 아이템 사용 횟수가 0보다 크면 실행
+			if (removeAllLinesUsage > 0) {
+				removeAllLines(); // 전체 블록 삭제 아이템
+				removeAllLinesUsage--; // 아이템 사용 후 사용 횟수 감소
+			}
+		}
+		private void handleRemoveBottomLinesItem() {
+			if (removeBottomLinesUsage > 0) {
+				removeBottomLines(2); // 하단 n줄 삭제
+				removeBottomLinesUsage--;
+			}
+		}
+		private void handleScoreIncreasedItem() {
+			if (isScoreIncreasedUsage > 0) {
+				// 's' 키가 눌리면 스코어 10점 추가
+				numLinesRemoved += 10;
+				// 스코어를 업데이트하여 화면에 표시
+				statusbar.setText(String.valueOf(numLinesRemoved));
+				isScoreIncreasedUsage--;
 				}
 			}
-
-			if (keycode == 'q' || keycode == 'Q') {
-				if (removeBottomLinesUsage > 0) {
-					removeBottomLines(2); // 하단 n줄 삭제
-					removeBottomLinesUsage--;
-				}
-			}
-
-			if (keycode == 's' || keycode == 'S') {
-				if (isScoreIncreasedUsage > 0) {
-					// 's' 키가 눌리면 스코어 10점 추가
-					numLinesRemoved += 10;
-					// 스코어를 업데이트하여 화면에 표시
-					statusbar.setText(String.valueOf(numLinesRemoved));
-					isScoreIncreasedUsage--;
-				}
-			}
-
-
+		private void handleSpecialKeys(int keycode) {
 			if (keycode == 'p' || keycode == 'P') {
 				pause();
 				return;
 			}
 
-			if (!isStarted) {
-				if (keycode == 'r' || keycode == 'R') {
+				if (!isStarted && (keycode == 'r' || keycode == 'R')) {
 					restartGame();
 				}
-				return;
 			}
-
-			if (isPaused)
-				return;
-
-			if (!isStarted || curPiece.getShape() == Tetrominoes.NoShape) {
-				return;
-			}
-
+		private void handleGameKeys(int keycode) {
 			switch (keycode) {
-
-
 				case KeyEvent.VK_LEFT:
 					tryMove(curPiece, curX - 1, curY);
 					break;
@@ -620,11 +614,10 @@ public class Board extends JPanel implements ActionListener {
 					dropDown();
 					break;
 				case 'd':
-					oneLineDown();
-					break;
 				case 'D':
 					oneLineDown();
 					break;
+				default:
 
 			}
 		}
