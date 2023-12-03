@@ -1,16 +1,16 @@
 
 f
-java:S6208é"CMerge the previous cases into this one using comma-separated label.(è‰½Ôùÿÿÿÿ8½³¨íÂ1
+java:S6208ä"CMerge the previous cases into this one using comma-separated label.(è‰½Ôùÿÿÿÿ8½³¨íÂ1
 M
-java:S1066ï"/Merge this if statement with the enclosing one.(ªŸ´¸8¾³¨íÂ1
-o
-java:S1104I"RMake colors a static final constant or non-public and provide accessors if needed.(æ¬˜8¾³¨íÂ1
-I
-java:S1444I",Make this "public static colors" field final(æ¬˜8¾³¨íÂ1
+java:S1066ë"/Merge this if statement with the enclosing one.(ªŸ´¸8¾³¨íÂ1
+p
+java:S1104è"RMake colors a static final constant or non-public and provide accessors if needed.(æ¬˜8İ²ñîÂ1
+J
+java:S1444è",Make this "public static colors" field final(æ¬˜8İ²ñîÂ1
 6
 java:S17003"Rename field "board"(¦§ùßûÿÿÿÿ8¿³¨íÂ1
 ‰
-java:S4165S"gRemove this useless assignment; "sidePanel" already holds the assigned value along all execution paths.(éñßøÿÿÿÿ8µ¨íÂ1
+java:S4165O"gRemove this useless assignment; "sidePanel" already holds the assigned value along all execution paths.(éñßøÿÿÿÿ8µ¨íÂ1
 q	java:S116"URename this field "BoardWidth" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š¬×Æ8Ÿµ¨íÂ1
 w	java:S116"VRename this field "BoardHeight" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ñ¡òøÿÿÿÿ8Ÿµ¨íÂ1
 >
@@ -21,40 +21,36 @@ java:S1170"!Make this final field static too.(¼ñ¡òøÿÿÿÿ8¡µ¨íÂ1
 java:S1450"]Remove the "removeAllLines" field and declare it as a local variable in the relevant methods.(ÿ•ĞÈüÿÿÿÿ8¢µ¨íÂ1
 ‚
 java:S1450"`Remove the "removeBottomLines" field and declare it as a local variable in the relevant methods.(é‹óëúÿÿÿÿ8£µ¨íÂ1
-:
-java:S2386I"Make this member "protected".(æ¬˜8£µ¨íÂ1
+;
+java:S2386è"Make this member "protected".(æ¬˜8ò´ñîÂ1
 L
 java:S19482"*Make "curPiece" transient or serializable.(ãÈñåøÿÿÿÿ8£µ¨íÂ1
 H
 java:S19485"+Make "nextPiece" transient or serializable.(»Ë‡ë8£µ¨íÂ1
-G
-java:S1197I"*Move the array designators [] to the type.(æ¬˜8¦µ¨íÂ1
 b
-java:S3252^"@Use static access with "javax.swing.SwingConstants" for "RIGHT".(˜µÀÉúÿÿÿÿ8¨µ¨íÂ1
+java:S3252Z"@Use static access with "javax.swing.SwingConstants" for "RIGHT".(˜µÀÉúÿÿÿÿ8¨µ¨íÂ1
 X
-java:S1161Õ":Add the "@Override" annotation above this method signature(¶øÂÁ8¬µ¨íÂ1
+java:S1161Ñ":Add the "@Override" annotation above this method signature(¶øÂÁ8¬µ¨íÂ1
 u
-java:S3776ç"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(³½İÆøÿÿÿÿ8²µ¨íÂ1
+java:S3776ã"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(³½İÆøÿÿÿÿ8²µ¨íÂ1
 F
-java:S2140”")Use "java.util.Random.nextInt()" instead.(æÒt8´µ¨íÂ1
-M
-java:S1197î"*Move the array designators [] to the type.(á“õÙüÿÿÿÿ8¶µ¨íÂ1
-]
-java:S1117î":Rename "colors" which hides the field declared at line 73.(á“õÙüÿÿÿÿ8¶µ¨íÂ1
+java:S2140")Use "java.util.Random.nextInt()" instead.(æÒt8´µ¨íÂ1
+H
+java:S1197è"*Move the array designators [] to the type.(æ¬˜8¬¼ğîÂ1
 W
-java:S1161™":Add the "@Override" annotation above this method signature(İ¼õA8¸µ¨íÂ1
+java:S1161”":Add the "@Override" annotation above this method signature(İ¼õA8¸µ¨íÂ1
 Q
-java:S1656S"/Remove or correct this useless self-assignment.(éñßøÿÿÿÿ8ºµ¨íÂ1
+java:S1656O"/Remove or correct this useless self-assignment.(éñßøÿÿÿÿ8ºµ¨íÂ1
 D
-java:S3398¨"!Move this method into "TAdapter".(ˆªÉèıÿÿÿÿ8ºµ¨íÂ1
+java:S3398¤"!Move this method into "TAdapter".(ˆªÉèıÿÿÿÿ8ºµ¨íÂ1
 D
-java:S3398±"!Move this method into "TAdapter".(“¹ü÷ûÿÿÿÿ8ºµ¨íÂ1
+java:S3398­"!Move this method into "TAdapter".(“¹ü÷ûÿÿÿÿ8ºµ¨íÂ1
 ?
-java:S3398…"!Move this method into "TAdapter".(•ŞÍê8ºµ¨íÂ1
+java:S3398€"!Move this method into "TAdapter".(•ŞÍê8ºµ¨íÂ1
 ?
-java:S3398Å"!Move this method into "TAdapter".(Ş«Éª8ºµ¨íÂ1
+java:S3398Á"!Move this method into "TAdapter".(Ş«Éª8ºµ¨íÂ1
 D
-java:S3398‘"!Move this method into "TAdapter".(¦ñ“üÿÿÿÿ8ºµ¨íÂ1
+java:S3398"!Move this method into "TAdapter".(¦ñ“üÿÿÿÿ8ºµ¨íÂ1
 W
 java:S1068"5Remove this unused "removeBottomLines" private field.(é‹óëúÿÿÿÿ8»µ¨íÂ1
 T

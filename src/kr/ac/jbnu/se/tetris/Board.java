@@ -70,10 +70,6 @@ public class Board extends JPanel implements ActionListener {
 		}
 	}
 
-	public static Color colors[] = {new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
-			new Color(102, 102, 204), new Color(204, 204, 102), new Color(204, 102, 204), new Color(102, 204, 204),
-			new Color(218, 170, 0)};
-
 	public Board(Tetris parent) {
 		setFocusable(true);
 		curPiece = new Shape();
@@ -489,12 +485,11 @@ public class Board extends JPanel implements ActionListener {
 		sidePanel.setNextShape(nextPiece.getShape());
 	}
 
+	public static Color colors[] = {new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
+			new Color(102, 102, 204), new Color(204, 204, 102), new Color(204, 102, 204), new Color(102, 204, 204),
+			new Color(218, 170, 0)};
 
 	private void drawSquare(Graphics g, int x, int y, Tetrominoes shape) {
-		Color colors[] = {new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
-				new Color(102, 102, 204), new Color(204, 204, 102), new Color(204, 102, 204), new Color(102, 204, 204),
-				new Color(218, 170, 0), new Color(50, 50, 50), Color.GRAY};
-
 		if (isGameOver) {
 			g.setColor(Color.GRAY);  // 게임 오버 시 블록을 회색으로 변경
 			g.fillRect(x + 1, y + 1, squareWidth() - 2, squareHeight() - 2);
